@@ -7,16 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9F5245D1890790600394E03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F5245C1890790600394E03 /* Foundation.framework */; };
-		C9F5245F1890790600394E03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F5245E1890790600394E03 /* CoreGraphics.framework */; };
-		C9F524611890790600394E03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F524601890790600394E03 /* UIKit.framework */; };
 		C9F524671890790600394E03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9F524651890790600394E03 /* InfoPlist.strings */; };
 		C9F524691890790600394E03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F524681890790600394E03 /* main.m */; };
 		C9F5246D1890790600394E03 /* APMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F5246C1890790600394E03 /* APMAppDelegate.m */; };
 		C9F5246F1890790600394E03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F5246E1890790600394E03 /* Images.xcassets */; };
-		C9F524761890790600394E03 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F524751890790600394E03 /* XCTest.framework */; };
-		C9F524771890790600394E03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F5245C1890790600394E03 /* Foundation.framework */; };
-		C9F524781890790600394E03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F524601890790600394E03 /* UIKit.framework */; };
 		C9F524801890790600394E03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9F5247E1890790600394E03 /* InfoPlist.strings */; };
 		C9F524821890790600394E03 /* Airplane_ModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F524811890790600394E03 /* Airplane_ModeTests.m */; };
 /* End PBXBuildFile section */
@@ -33,9 +27,6 @@
 
 /* Begin PBXFileReference section */
 		C9F524591890790600394E03 /* Airplane Mode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Airplane Mode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9F5245C1890790600394E03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C9F5245E1890790600394E03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C9F524601890790600394E03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C9F524641890790600394E03 /* Airplane Mode-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Airplane Mode-Info.plist"; sourceTree = "<group>"; };
 		C9F524661890790600394E03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C9F524681890790600394E03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,7 +35,6 @@
 		C9F5246C1890790600394E03 /* APMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMAppDelegate.m; sourceTree = "<group>"; };
 		C9F5246E1890790600394E03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C9F524741890790600394E03 /* Airplane ModeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Airplane ModeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9F524751890790600394E03 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C9F5247D1890790600394E03 /* Airplane ModeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Airplane ModeTests-Info.plist"; sourceTree = "<group>"; };
 		C9F5247F1890790600394E03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C9F524811890790600394E03 /* Airplane_ModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airplane_ModeTests.m; sourceTree = "<group>"; };
@@ -55,9 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9F5245F1890790600394E03 /* CoreGraphics.framework in Frameworks */,
-				C9F524611890790600394E03 /* UIKit.framework in Frameworks */,
-				C9F5245D1890790600394E03 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,9 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9F524761890790600394E03 /* XCTest.framework in Frameworks */,
-				C9F524781890790600394E03 /* UIKit.framework in Frameworks */,
-				C9F524771890790600394E03 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +63,6 @@
 			children = (
 				C9F524621890790600394E03 /* Airplane Mode */,
 				C9F5247B1890790600394E03 /* Airplane ModeTests */,
-				C9F5245B1890790600394E03 /* Frameworks */,
 				C9F5245A1890790600394E03 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,17 +74,6 @@
 				C9F524741890790600394E03 /* Airplane ModeTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		C9F5245B1890790600394E03 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C9F5245C1890790600394E03 /* Foundation.framework */,
-				C9F5245E1890790600394E03 /* CoreGraphics.framework */,
-				C9F524601890790600394E03 /* UIKit.framework */,
-				C9F524751890790600394E03 /* XCTest.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C9F524621890790600394E03 /* Airplane Mode */ = {
@@ -292,6 +264,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_MODULES_AUTOLINK = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -331,6 +304,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_MODULES_AUTOLINK = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -442,6 +416,7 @@
 				C9F524871890790600394E03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9F524881890790600394E03 /* Build configuration list for PBXNativeTarget "Airplane ModeTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +425,7 @@
 				C9F5248A1890790600394E03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
