@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9F524671890790600394E03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9F524651890790600394E03 /* InfoPlist.strings */; };
 		C9F524691890790600394E03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F524681890790600394E03 /* main.m */; };
 		C9F5246D1890790600394E03 /* APMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F5246C1890790600394E03 /* APMAppDelegate.m */; };
 		C9F5246F1890790600394E03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F5246E1890790600394E03 /* Images.xcassets */; };
-		C9F524801890790600394E03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9F5247E1890790600394E03 /* InfoPlist.strings */; };
 		C9F524821890790600394E03 /* Airplane_ModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F524811890790600394E03 /* Airplane_ModeTests.m */; };
 /* End PBXBuildFile section */
 
@@ -28,15 +26,12 @@
 /* Begin PBXFileReference section */
 		C9F524591890790600394E03 /* Airplane Mode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Airplane Mode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F524641890790600394E03 /* Airplane Mode-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Airplane Mode-Info.plist"; sourceTree = "<group>"; };
-		C9F524661890790600394E03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C9F524681890790600394E03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C9F5246A1890790600394E03 /* Airplane Mode-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Airplane Mode-Prefix.pch"; sourceTree = "<group>"; };
 		C9F5246B1890790600394E03 /* APMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMAppDelegate.h; sourceTree = "<group>"; };
 		C9F5246C1890790600394E03 /* APMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMAppDelegate.m; sourceTree = "<group>"; };
 		C9F5246E1890790600394E03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C9F524741890790600394E03 /* Airplane ModeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Airplane ModeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9F5247D1890790600394E03 /* Airplane ModeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Airplane ModeTests-Info.plist"; sourceTree = "<group>"; };
-		C9F5247F1890790600394E03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C9F524811890790600394E03 /* Airplane_ModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airplane_ModeTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				C9F524641890790600394E03 /* Airplane Mode-Info.plist */,
-				C9F524651890790600394E03 /* InfoPlist.strings */,
 				C9F524681890790600394E03 /* main.m */,
 				C9F5246A1890790600394E03 /* Airplane Mode-Prefix.pch */,
 			);
@@ -102,18 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				C9F524811890790600394E03 /* Airplane_ModeTests.m */,
-				C9F5247C1890790600394E03 /* Supporting Files */,
 			);
 			path = "Airplane ModeTests";
-			sourceTree = "<group>";
-		};
-		C9F5247C1890790600394E03 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C9F5247D1890790600394E03 /* Airplane ModeTests-Info.plist */,
-				C9F5247E1890790600394E03 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +176,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9F524671890790600394E03 /* InfoPlist.strings in Resources */,
 				C9F5246F1890790600394E03 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,7 +184,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9F524801890790600394E03 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,25 +216,6 @@
 			targetProxy = C9F524791890790600394E03 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C9F524651890790600394E03 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C9F524661890790600394E03 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		C9F5247E1890790600394E03 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C9F5247F1890790600394E03 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C9F524831890790600394E03 /* Debug */ = {
