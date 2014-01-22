@@ -7,6 +7,7 @@
 //
 
 #import "APMRootViewController.h"
+#import "APMSessionManager.h"
 
 @interface APMRootViewController ()
 
@@ -27,6 +28,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[APMSessionManager sharedManager] start];
 }
 
 - (void)didReceiveMemoryWarning
