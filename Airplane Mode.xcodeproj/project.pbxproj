@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9199C2818907D4F0017A34B /* APMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9199C2718907D4F0017A34B /* APMRootViewController.m */; };
 		C9F524691890790600394E03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F524681890790600394E03 /* main.m */; };
 		C9F5246D1890790600394E03 /* APMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F5246C1890790600394E03 /* APMAppDelegate.m */; };
 		C9F5246F1890790600394E03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F5246E1890790600394E03 /* Images.xcassets */; };
@@ -24,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9199C2618907D4F0017A34B /* APMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMRootViewController.h; sourceTree = "<group>"; };
+		C9199C2718907D4F0017A34B /* APMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMRootViewController.m; sourceTree = "<group>"; };
 		C9F524591890790600394E03 /* Airplane Mode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Airplane Mode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F524641890790600394E03 /* Airplane Mode-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Airplane Mode-Info.plist"; sourceTree = "<group>"; };
 		C9F524681890790600394E03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -75,7 +78,8 @@
 			children = (
 				C9F5246B1890790600394E03 /* APMAppDelegate.h */,
 				C9F5246C1890790600394E03 /* APMAppDelegate.m */,
-				C9F5246E1890790600394E03 /* Images.xcassets */,
+				C9199C2618907D4F0017A34B /* APMRootViewController.h */,
+				C9199C2718907D4F0017A34B /* APMRootViewController.m */,
 				C9F524631890790600394E03 /* Supporting Files */,
 			);
 			path = "Airplane Mode";
@@ -84,6 +88,7 @@
 		C9F524631890790600394E03 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C9F5246E1890790600394E03 /* Images.xcassets */,
 				C9F524641890790600394E03 /* Airplane Mode-Info.plist */,
 				C9F524681890790600394E03 /* main.m */,
 			);
@@ -194,6 +199,7 @@
 			files = (
 				C9F524691890790600394E03 /* main.m in Sources */,
 				C9F5246D1890790600394E03 /* APMAppDelegate.m in Sources */,
+				C9199C2818907D4F0017A34B /* APMRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
