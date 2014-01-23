@@ -19,6 +19,8 @@ static NSString * const APMServiceType = @"airplane-mode";
 @property (nonatomic, strong) MCNearbyServiceBrowser *browser;
 @property (nonatomic, strong) MCNearbyServiceAdvertiser *advertiser;
 
+@property (nonatomic, strong) MCSession *session;
+
 @end
 
 
@@ -80,12 +82,21 @@ static NSString * const APMServiceType = @"airplane-mode";
     return _advertiser;
 }
 
+- (MCSession *)session
+{
+    if (!_session) {
+        _session = [[MCSession alloc] initWithPeer:self.peerID];
+    }
+    return _session;
+}
+
 
 #pragma mark - MCNearbyServiceBrowserDelegate
 
 - (void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info
 {
     [self logMessage:[NSString stringWithFormat:@"Browser found: %@", peerID.displayName]];
+    [browser invitePeer:peerID toSession:self.session withContext:nil timeout:0];
 }
 
 - (void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID
