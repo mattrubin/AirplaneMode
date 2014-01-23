@@ -13,7 +13,7 @@
 static NSString * const APMServiceType = @"airplane-mode";
 
 
-@interface APMSessionManager ()
+@interface APMSessionManager () <MCNearbyServiceBrowserDelegate, MCNearbyServiceAdvertiserDelegate>
 
 @property (nonatomic, strong) MCPeerID *peerID;
 @property (nonatomic, strong) MCNearbyServiceBrowser *browser;
@@ -38,6 +38,7 @@ static NSString * const APMServiceType = @"airplane-mode";
 {
     [self.browser startBrowsingForPeers];
     [self.advertiser startAdvertisingPeer];
+    NSLog(@"Started...");
 }
 
 
@@ -55,6 +56,8 @@ static NSString * const APMServiceType = @"airplane-mode";
 {
     if (!_browser) {
         _browser = [[MCNearbyServiceBrowser alloc] initWithPeer:self.peerID serviceType:APMServiceType];
+        _browser.delegate = self;
+        NSLog(@"Broswer created.");
     }
     return _browser;
 }
@@ -63,8 +66,41 @@ static NSString * const APMServiceType = @"airplane-mode";
 {
     if (!_advertiser) {
         _advertiser = [[MCNearbyServiceAdvertiser alloc] initWithPeer:self.peerID discoveryInfo:nil serviceType:APMServiceType];
+        _advertiser.delegate = self;
+        NSLog(@"Advertiser created.");
     }
     return _advertiser;
+}
+
+
+#pragma mark - MCNearbyServiceBrowserDelegate
+
+- (void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info
+{
+    NSLog(@"Browser found %@", peerID);
+}
+
+- (void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID
+{
+    NSLog(@"Browser lost %@", peerID);
+}
+
+- (void)browser:(MCNearbyServiceBrowser *)browser didNotStartBrowsingForPeers:(NSError *)error
+{
+    NSLog(@"Browser Error: %@", error);
+}
+
+
+#pragma mark - MCNearbyServiceAdvertiserDelegate
+
+- (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID withContext:(NSData *)context invitationHandler:(void (^)(BOOL, MCSession *))invitationHandler
+{
+    NSLog(@"Advertiser received invitation!");
+}
+
+- (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didNotStartAdvertisingPeer:(NSError *)error
+{
+    NSLog(@"Advertiser error: %@", error);
 }
 
 @end
