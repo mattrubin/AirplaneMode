@@ -7,6 +7,19 @@
 //
 
 #import "APMSessionManager.h"
+@import MultipeerConnectivity;
+
+
+static NSString * const APMServiceType = @"airplane-mode";
+
+
+@interface APMSessionManager ()
+
+@property (nonatomic, strong) MCPeerID *peerID;
+@property (nonatomic, strong) MCNearbyServiceBrowser *browser;
+@property (nonatomic, strong) MCNearbyServiceAdvertiser *advertiser;
+
+@end
 
 
 @implementation APMSessionManager
@@ -23,7 +36,35 @@
 
 - (void)start
 {
-    NSLog(@"%@", self);
+    [self.browser startBrowsingForPeers];
+    [self.advertiser startAdvertisingPeer];
+}
+
+
+#pragma mark -
+
+- (MCPeerID *)peerID
+{
+    if (!_peerID) {
+        _peerID = [[MCPeerID alloc] initWithDisplayName:[UIDevice currentDevice].name];
+    }
+    return _peerID;
+}
+
+- (MCNearbyServiceBrowser *)browser
+{
+    if (!_browser) {
+        _browser = [[MCNearbyServiceBrowser alloc] initWithPeer:self.peerID serviceType:APMServiceType];
+    }
+    return _browser;
+}
+
+- (MCNearbyServiceAdvertiser *)advertiser
+{
+    if (!_advertiser) {
+        _advertiser = [[MCNearbyServiceAdvertiser alloc] initWithPeer:self.peerID discoveryInfo:nil serviceType:APMServiceType];
+    }
+    return _advertiser;
 }
 
 @end
