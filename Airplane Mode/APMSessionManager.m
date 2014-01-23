@@ -38,7 +38,15 @@ static NSString * const APMServiceType = @"airplane-mode";
 {
     [self.browser startBrowsingForPeers];
     [self.advertiser startAdvertisingPeer];
-    NSLog(@"Started...");
+    [self logMessage:@"Started..."];
+}
+
+- (void)logMessage:(NSString *)message
+{
+    NSLog(@"%@", message);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"APMSessionManagerNotification"
+                                                        object:self
+                                                      userInfo:@{@"log": (message ?: @"")}];
 }
 
 
@@ -57,7 +65,7 @@ static NSString * const APMServiceType = @"airplane-mode";
     if (!_browser) {
         _browser = [[MCNearbyServiceBrowser alloc] initWithPeer:self.peerID serviceType:APMServiceType];
         _browser.delegate = self;
-        NSLog(@"Broswer created.");
+        [self logMessage:@"Broswer created."];
     }
     return _browser;
 }
@@ -67,7 +75,7 @@ static NSString * const APMServiceType = @"airplane-mode";
     if (!_advertiser) {
         _advertiser = [[MCNearbyServiceAdvertiser alloc] initWithPeer:self.peerID discoveryInfo:nil serviceType:APMServiceType];
         _advertiser.delegate = self;
-        NSLog(@"Advertiser created.");
+        [self logMessage:@"Advertiser created."];
     }
     return _advertiser;
 }
@@ -77,17 +85,17 @@ static NSString * const APMServiceType = @"airplane-mode";
 
 - (void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info
 {
-    NSLog(@"Browser found %@", peerID);
+    [self logMessage:[NSString stringWithFormat:@"Browser found: %@", peerID.displayName]];
 }
 
 - (void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID
 {
-    NSLog(@"Browser lost %@", peerID);
+    [self logMessage:[NSString stringWithFormat:@"Browser lost: %@", peerID.displayName]];
 }
 
 - (void)browser:(MCNearbyServiceBrowser *)browser didNotStartBrowsingForPeers:(NSError *)error
 {
-    NSLog(@"Browser Error: %@", error);
+    [self logMessage:[NSString stringWithFormat:@"Browser Error: %@", error]];
 }
 
 
@@ -95,12 +103,12 @@ static NSString * const APMServiceType = @"airplane-mode";
 
 - (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID withContext:(NSData *)context invitationHandler:(void (^)(BOOL, MCSession *))invitationHandler
 {
-    NSLog(@"Advertiser received invitation!");
+    [self logMessage:[NSString stringWithFormat:@"Advertiser received invitation!"]];
 }
 
 - (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didNotStartAdvertisingPeer:(NSError *)error
 {
-    NSLog(@"Advertiser error: %@", error);
+    [self logMessage:[NSString stringWithFormat:@"Advertiser error: %@", error]];
 }
 
 @end
