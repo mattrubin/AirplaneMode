@@ -13,7 +13,7 @@
 static NSString * const APMServiceType = @"airplane-mode";
 
 
-@interface APMSessionManager () <MCNearbyServiceBrowserDelegate, MCNearbyServiceAdvertiserDelegate>
+@interface APMSessionManager () <MCNearbyServiceBrowserDelegate, MCNearbyServiceAdvertiserDelegate, MCSessionDelegate>
 
 @property (nonatomic, strong) MCPeerID *peerID;
 @property (nonatomic, strong) MCNearbyServiceBrowser *browser;
@@ -45,10 +45,12 @@ static NSString * const APMServiceType = @"airplane-mode";
 
 - (void)logMessage:(NSString *)message
 {
+    dispatch_async(dispatch_get_main_queue(), ^{
     NSLog(@"%@", message);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"APMSessionManagerNotification"
                                                         object:self
                                                       userInfo:@{@"log": (message ?: @"")}];
+    });
 }
 
 
@@ -86,6 +88,7 @@ static NSString * const APMServiceType = @"airplane-mode";
 {
     if (!_session) {
         _session = [[MCSession alloc] initWithPeer:self.peerID];
+        _session.delegate = self;
     }
     return _session;
 }
@@ -123,4 +126,43 @@ static NSString * const APMServiceType = @"airplane-mode";
     [self logMessage:[NSString stringWithFormat:@"Advertiser error: %@", error]];
 }
 
+
+#pragma mark - MCSessionDelegate
+
+- (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state
+{
+    NSString *stateString;
+    switch (state) {
+        case MCSessionStateConnecting:
+            stateString = @"Connecting to";
+            break;
+        case MCSessionStateConnected:
+            stateString = @"Connected to";
+            break;
+        case MCSessionStateNotConnected:
+            stateString = @"Disconnected from";
+            break;
+    }
+    [self logMessage:[NSString stringWithFormat:@"%@ %@", stateString, peerID.displayName]];
+}
+
+- (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
+{
+
+}
+
+- (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID
+{
+
+}
+
+- (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress
+{
+
+}
+
+- (void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error
+{
+
+}
 @end
