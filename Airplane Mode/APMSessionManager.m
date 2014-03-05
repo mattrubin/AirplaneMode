@@ -95,13 +95,13 @@ static NSString * const APMServiceType = @"airplane-mode";
 
 - (void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info
 {
-    [self logMessage:[NSString stringWithFormat:@"Browser found: %@", peerID.displayName]];
+    [self logMessage:[NSString stringWithFormat:@"Found %@", peerID.displayName]];
     [browser invitePeer:peerID toSession:self.session withContext:nil timeout:0];
 }
 
 - (void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID
 {
-    [self logMessage:[NSString stringWithFormat:@"Browser lost: %@", peerID.displayName]];
+    [self logMessage:[NSString stringWithFormat:@"Lost %@", peerID.displayName]];
 }
 
 - (void)browser:(MCNearbyServiceBrowser *)browser didNotStartBrowsingForPeers:(NSError *)error
@@ -114,7 +114,8 @@ static NSString * const APMServiceType = @"airplane-mode";
 
 - (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID withContext:(NSData *)context invitationHandler:(void (^)(BOOL, MCSession *))invitationHandler
 {
-    [self logMessage:[NSString stringWithFormat:@"Advertiser received invitation!"]];
+    [self logMessage:[NSString stringWithFormat:@"Received invitation from %@", peerID.displayName]];
+    invitationHandler(YES, self.session);
 }
 
 - (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didNotStartAdvertisingPeer:(NSError *)error
