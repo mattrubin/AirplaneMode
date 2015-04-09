@@ -69,7 +69,7 @@ static NSString * const APMServiceType = @"airplane-mode";
     if (!_browser) {
         _browser = [[MCNearbyServiceBrowser alloc] initWithPeer:self.peerID serviceType:APMServiceType];
         _browser.delegate = self;
-        [self logMessage:@"Broswer created."];
+        [self logMessage:@"Browser created."];
     }
     return _browser;
 }
